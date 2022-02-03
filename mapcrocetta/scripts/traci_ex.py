@@ -32,7 +32,7 @@ while traci.simulation.getMinExpectedNumber() > 0 :
     traci.simulationStep()
     
     if (step % time)<0.1:     #every "time"(100) seconds of simulation
-        
+        counter+=1
         response = requests.get(traffic_file_url)
         string_xml = response.content
         root = ET.fromstring(string_xml)
@@ -52,7 +52,6 @@ while traci.simulation.getMinExpectedNumber() > 0 :
                         print("calibrator_"+calibrator['id'] + " " + current_flow)
                         traci.calibrator.setFlow("calibrator_"+calibrator['id'], 0, 3600, current_flow, 10, 'DEFAULT_VEHTYPE' , "routedistcal"+str(i), departLane='free', departSpeed='max')
                 i+=1
-    counter+=1
     step += 0.1
 traci.close()
 

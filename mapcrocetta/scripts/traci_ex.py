@@ -39,7 +39,7 @@ while traci.simulation.getMinExpectedNumber() > 0 :
         with open(calibrators_db_file, "r") as calibrators_db:
             calibrators = json.load(calibrators_db)
             i=1
-            print("\nSynchronizing current flow with opendata")
+            print("\nSynchronizing " + i + " current flow with opendata")
             for calibrator in calibrators['calibrators']:
                 current_lat = calibrator['pos']['lat']
                 current_lon = calibrator['pos']['lon']
@@ -53,8 +53,6 @@ while traci.simulation.getMinExpectedNumber() > 0 :
                 i+=1
     step += 0.1
 traci.close()
-
-print("simulazione finita")
 
 
 

@@ -1,0 +1,38 @@
+
+
+netconvert --osm-files map.osm -o map.net.xml --geometry.remove --ramps.guess --junctions.join --tls.default-type actuated --keep-edges.by-vclass passenger
+
+copia il file poly
+  
+polyconvert --net-file map.net.xml --osm-files map.osm --type-file typemap.xml -o map.poly.xml
+  
+python3 /home/simutorino/sumo/tools/randomTrips.py -n map.net.xml -e 1000 -l
+  
+python3 /home/simutorino/sumo/tools/randomTrips.py -n map.net.xml -r map.rou.xml -e 1000 --random -l -p 0.6
+  
+copia il file da sumo.cfg 
+  
+sumo-gui map.sumo.cfg
+
+
+python3 randomTrips.py -n map.net.xml -r map.rou.xml -e 3000 -l -p 2
+
+
+
+
+python randomTrips.py -n map.net.xml -r cal_routes/map.roucal1.xml -e 100 -l --weights-prefix cal_sources/calibratorssources
+python randomTrips.py -n map.net.xml -r cal_routes/map.roucal2.xml -e 100 -l --weights-prefix cal_sources/calibratorssources2
+python randomTrips.py -n map.net.xml -r cal_routes/map.roucal3.xml -e 100 -l --weights-prefix cal_sources/calibratorssources3
+python randomTrips.py -n map.net.xml -r cal_routes/map.roucal4.xml -e 100 -l --weights-prefix cal_sources/calibratorssources4
+python randomTrips.py -n map.net.xml -r cal_routes/map.roucal5.xml -e 100 -l --weights-prefix cal_sources/calibratorssources5
+python randomTrips.py -n map.net.xml -r cal_routes/map.roucal6.xml -e 100 -l --weights-prefix cal_sources/calibratorssources6
+python randomTrips.py -n map.net.xml -r cal_routes/map.roucal7.xml -e 100 -l --weights-prefix cal_sources/calibratorssources7
+python randomTrips.py -n map.net.xml -r cal_routes/map.roucal8.xml -e 100 -l --weights-prefix cal_sources/calibratorssources8
+python randomTrips.py -n map.net.xml -r cal_routes/map.roucal9.xml -e 100 -l --weights-prefix cal_sources/calibratorssources9
+python randomTrips.py -n map.net.xml -r cal_routes/map.roucal10.xml -e 100 -l --weights-prefix cal_sources/calibratorssources10
+
+opp_nedtool c prova5G.ned 
+comando per convertire in xml il file prova5G.ned
+
+opp_nedtool c prova5G.ned.xml
+comando per convertire in ned il file prova5G.ned.xml

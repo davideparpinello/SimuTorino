@@ -1,0 +1,5 @@
+pyproj==3.3.0
+requests==2.27.1
+Rtree==0.9.7
+selenium==4.1.0
+

@@ -16,7 +16,7 @@ os.system("python3 scripts/changeNEDfile.py")
 print("Reconvert .ned.xml in .ned")
 os.system("opp_nedtool c utils/prova5G.ned.xml -o utils/prova5G.ned")
 print("Executing veins_launchd script..")
-subprocess.run(["../veins/bin/veins_launchd", "-vv"])
+subprocess.run(["../../veins/bin/veins_launchd", "-vv"])
 print("Executing TraCI script")
 os.system("python3 scripts/traci_ex.py")
 

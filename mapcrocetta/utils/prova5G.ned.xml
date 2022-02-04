@@ -1,5 +1,7 @@
-<ned-file filename="simuTorino.ned">
-    <package name="simu5g.simulations.NR.simuTorino" />
+<ned-file filename="utils/prova5G.ned">
+    <package name="mapcrocetta.utils">
+        <comment locid="banner" content="// &#10;//                  Simu5G&#10;//&#10;// Authors: Giovanni Nardini, Giovanni Stea, Antonio Virdis (University of Pisa)&#10;// &#10;// This file is part of a software released under the license included in file&#10;// &quot;license.pdf&quot;. Please read LICENSE and README files before using it.&#10;// The above files and the present reference are part of the software itself, &#10;// and cannot be removed from it.&#10;//&#10;" />
+    </package>
     <package name="org.car2x.veins.subprojects.veins_inet.examples.veins_inet">
         <comment locid="right" content="&#10;&#10;" />
     </package>
@@ -49,7 +51,7 @@
     <import import-spec="org.car2x.veins.visualizer.roads.RoadsOsgVisualizer">
         <comment locid="right" content="&#10;&#10;" />
     </import>
-    <compound-module name="simuTorino">
+    <compound-module name="prova5G">
         <parameters>
             <property is-implicit="true" name="isNetwork" />
             <param type="bool" name="useOsg" value="false" is-default="true" />
@@ -113,7 +115,7 @@
                 </parameters>
             </submodule>
             <submodule name="roadsOsgVisualizer" type="RoadsOsgVisualizer">
-                <comment locid="trailing" content="&#10;        &#10;" />
+                <comment locid="trailing" content="&#10;&#10;" />
                 <condition condition="useOsg" />
                 <parameters is-implicit="true">
                     <property name="display">
@@ -241,7 +243,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=1408.559107588313,2176.3311311417074;is=s&quot;" value="p=1408.559107588313,2176.3311311417074;is=s" />
+                            <literal type="string" text="&quot;p=1408.559107588313,2176.3311311426387;is=s&quot;" value="p=1408.559107588313,2176.3311311426387;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -259,7 +261,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=819.0341264724266,2284.1396978861467;is=s&quot;" value="p=819.0341264724266,2284.1396978861467;is=s" />
+                            <literal type="string" text="&quot;p=819.0341264724266,2284.139697887078;is=s&quot;" value="p=819.0341264724266,2284.139697887078;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -278,7 +280,7 @@
                     <property name="display">
                         <comment locid="right" content=" //5G&#10;" />
                         <property-key>
-                            <literal type="string" text="&quot;p=708.1747828541556,1763.3561347304658;is=s&quot;" value="p=708.1747828541556,1763.3561347304658;is=s" />
+                            <literal type="string" text="&quot;p=708.1747828541556,1763.356134731397;is=s&quot;" value="p=708.1747828541556,1763.356134731397;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -287,7 +289,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=979.3204984455951,1731.8533503935487;is=s&quot;" value="p=979.3204984455951,1731.8533503935487;is=s" />
+                            <literal type="string" text="&quot;p=979.3204984455951,1731.85335039448;is=s&quot;" value="p=979.3204984455951,1731.85335039448;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -323,7 +325,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=876.0248205079115,1573.8783121137694;is=s&quot;" value="p=876.0248205079115,1573.8783121137694;is=s" />
+                            <literal type="string" text="&quot;p=876.0248205079115,1573.878312112838;is=s&quot;" value="p=876.0248205079115,1573.878312112838;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -332,7 +334,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=600.9538728193147,1588.832430614233;is=s&quot;" value="p=600.9538728193147,1588.832430614233;is=s" />
+                            <literal type="string" text="&quot;p=600.9538728193147,1588.8324306133018;is=s&quot;" value="p=600.9538728193147,1588.8324306133018;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -350,7 +352,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=988.2245955443941,1247.611502261907;is=s&quot;" value="p=988.2245955443941,1247.611502261907;is=s" />
+                            <literal type="string" text="&quot;p=988.2245955443941,1247.6115022628383;is=s&quot;" value="p=988.2245955443941,1247.6115022628383;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -360,7 +362,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=866.0843144871178,755.6562561086193;is=s&quot;" value="p=866.0843144871178,755.6562561086193;is=s" />
+                            <literal type="string" text="&quot;p=866.0843144871178,755.656256107688;is=s&quot;" value="p=866.0843144871178,755.656256107688;is=s" />
                         </property-key>
                     </property>
                 </parameters>

@@ -32,7 +32,7 @@ while traci.simulation.getMinExpectedNumber() > 0 :
     traci.simulationStep()
     
     if (step % time)<0.1:     #every "time"(100) seconds of simulation
-        
+        counter+=1
         response = requests.get(traffic_file_url)
         string_xml = response.content
         root = ET.fromstring(string_xml)
@@ -40,7 +40,7 @@ while traci.simulation.getMinExpectedNumber() > 0 :
         with open(calibrators_db_file, "r") as calibrators_db:
             calibrators = json.load(calibrators_db)
             i=1
-            print("\nSynchronizing " + str(counter) + " current flow with opendata")
+            print("\nSynchronization n." + str(counter) + " of current flow with online opendata")
             for calibrator in calibrators['calibrators']:
                 current_lat = calibrator['pos']['lat']
                 current_lon = calibrator['pos']['lon']
@@ -49,10 +49,9 @@ while traci.simulation.getMinExpectedNumber() > 0 :
                         speedflow = node.find('speedflow', namespaces)
                         current_flow = speedflow.attrib['flow']
                         current_speed = speedflow.attrib['speed']
-                        print("calibrator_"+calibrator['id'] + " " + current_flow)
+                        print("calibrator_"+calibrator['id'] + ", current flow[vehs/h]: " + current_flow)
                         traci.calibrator.setFlow("calibrator_"+calibrator['id'], 0, 3600, current_flow, 10, 'DEFAULT_VEHTYPE' , "routedistcal"+str(i), departLane='free', departSpeed='max')
                 i+=1
-    counter+=1
     step += 0.1
 traci.close()
 

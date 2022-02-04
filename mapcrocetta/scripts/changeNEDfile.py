@@ -2,7 +2,7 @@ import xml.etree.ElementTree as ET
 import json
 
 
-filename_xml = "./utils/prova5G.ned.xml"
+filename_xml = "./utils/Crocetta.ned.xml"
 tree = ET.parse(filename_xml)
 root = tree.getroot()
 

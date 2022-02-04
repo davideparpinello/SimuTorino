@@ -16,13 +16,13 @@ print("\nGenerating gnodeB positions for Omnet simulation..")
 os.system("python3 scripts/generate_pos_gnodes.py")
 
 print("\nConverting .ned config file in .ned.xml to be manipulated..")
-os.system("opp_nedtool c utils/prova5G.ned -o utils/prova5G.ned.xml") #NB ricorda di cambiare nome file
+os.system("opp_nedtool c utils/Crocetta.ned -o utils/Crocetta.ned.xml") #NB ricorda di cambiare nome file
 
 print("\nModifying ned.xml network file..")
 os.system("python3 scripts/changeNEDfile.py")
 
 print("\nReconverting .ned.xml in .ned..")
-os.system("opp_nedtool c utils/prova5G.ned.xml -o utils/prova5G.ned")
+os.system("opp_nedtool c utils/Crocetta.ned.xml -o utils/Crocetta.ned")
 
 print("\nExecuting veins_launchd script..")
 subprocess.Popen(["../../veins/bin/veins_launchd", "-vv"], shell=True)

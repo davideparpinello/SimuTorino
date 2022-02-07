@@ -1,5 +1,3 @@
-
-
 netconvert --osm-files map.osm -o map.net.xml --geometry.remove --ramps.guess --junctions.join --tls.default-type actuated --keep-edges.by-vclass passenger
 
 copia il file poly
@@ -7,7 +5,7 @@ copia il file poly
 polyconvert --net-file map.net.xml --osm-files map.osm --type-file typemap.xml -o map.poly.xml
   
 python3 /home/simutorino/sumo/tools/randomTrips.py -n map.net.xml -e 1000 -l
-  
+
 python3 /home/simutorino/sumo/tools/randomTrips.py -n map.net.xml -r map.rou.xml -e 1000 --random -l -p 0.6
   
 copia il file da sumo.cfg 

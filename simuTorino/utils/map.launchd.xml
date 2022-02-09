@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<launch>
+  <copy file="map.net.xml"/>
+  <copy file="map.rou.xml"/>
+  <copy file="map.poly.xml" />
+  <copy file="cal.rou.xml" />
+  <copy file="cal_add.xml" />
+  <copy file="map.sumo.cfg" type="config"/>
+</launch>

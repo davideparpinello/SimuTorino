@@ -1,0 +1,39 @@
+====== inet-4.x ======
+
+2021-04-22  ------ inet-4.3.2 released ------
+
+2021-04-01  ------ inet-4.3.1 released ------
+
+2021-01-11  ------ inet-4.3.0 released ------
+
+2020-12-15  Levente Mészáros
+
+	Added optional clock support to all timers.
+
+2020-04-17  Levente Mészáros
+
+	Fixed missing take() calls in pushPacket.
+
+2020-04-14  Levente Mészáros
+
+	Fixed the gate argument when calling handleCanPushPacket or handleCanPullPacket.
+
+2020-04-09  Levente Mészáros
+
+	Removed default argument value for gate parameters in push and pull methods.
+
+2020-07-24  Levente Mészáros
+
+	Renamed several functions related to the word pop for consistency.
+
+2020-01-08  ------ inet-4.2.0 released ------
+
+2018-10-03  Levente Mészáros
+
+	Added a new queueing package which replaces the old queue package. This new
+	package comes with a different API and a lot of new components. All old queue
+	components were either ported or completely replaced with components of the new
+	queueing package.
+
+	Added new NED simple modules: PacketBasedTokenGenerator, QueueBasedTokenGenerator,
+	SignalBasedTokenGenerator, and TimeBasedTokenGenerator.

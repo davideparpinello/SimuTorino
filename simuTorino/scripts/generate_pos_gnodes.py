@@ -21,7 +21,7 @@ for name in root.findall(".//location"):
     string_extracted=name.get('convBoundary').split(",")
     ymax=float(string_extracted[3])
 
-filename = './utils/tim_20211125_lteitaly.csv'
+filename = './utils/tim_lteitaly.csv'
 filename_json = './utils/gnodeB_IDs.json'
 i=0
 

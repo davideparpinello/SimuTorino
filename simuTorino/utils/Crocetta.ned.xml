@@ -224,7 +224,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=1408.559107588313,2176.3311311426387;is=s&quot;" value="p=1408.559107588313,2176.3311311426387;is=s" />
+                            <literal type="string" text="&quot;p=1408.559107588313,2176.3311311417074;is=s&quot;" value="p=1408.559107588313,2176.3311311417074;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -242,7 +242,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=819.0341264724266,2284.139697887078;is=s&quot;" value="p=819.0341264724266,2284.139697887078;is=s" />
+                            <literal type="string" text="&quot;p=819.0341264724266,2284.1396978861467;is=s&quot;" value="p=819.0341264724266,2284.1396978861467;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -261,7 +261,7 @@
                     <property name="display">
                         <comment locid="right" content=" //5G&#10;" />
                         <property-key>
-                            <literal type="string" text="&quot;p=708.1747828541556,1763.356134731397;is=s&quot;" value="p=708.1747828541556,1763.356134731397;is=s" />
+                            <literal type="string" text="&quot;p=708.1747828541556,1763.3561347304658;is=s&quot;" value="p=708.1747828541556,1763.3561347304658;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -270,7 +270,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=979.3204984455951,1731.85335039448;is=s&quot;" value="p=979.3204984455951,1731.85335039448;is=s" />
+                            <literal type="string" text="&quot;p=979.3204984455951,1731.8533503935487;is=s&quot;" value="p=979.3204984455951,1731.8533503935487;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -306,7 +306,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=876.0248205079115,1573.878312112838;is=s&quot;" value="p=876.0248205079115,1573.878312112838;is=s" />
+                            <literal type="string" text="&quot;p=876.0248205079115,1573.8783121137694;is=s&quot;" value="p=876.0248205079115,1573.8783121137694;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -315,7 +315,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=600.9538728193147,1588.8324306133018;is=s&quot;" value="p=600.9538728193147,1588.8324306133018;is=s" />
+                            <literal type="string" text="&quot;p=600.9538728193147,1588.832430614233;is=s&quot;" value="p=600.9538728193147,1588.832430614233;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -333,7 +333,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=988.2245955443941,1247.6115022628383;is=s&quot;" value="p=988.2245955443941,1247.6115022628383;is=s" />
+                            <literal type="string" text="&quot;p=988.2245955443941,1247.611502261907;is=s&quot;" value="p=988.2245955443941,1247.611502261907;is=s" />
                         </property-key>
                     </property>
                 </parameters>
@@ -343,7 +343,7 @@
                 <parameters is-implicit="true">
                     <property name="display">
                         <property-key>
-                            <literal type="string" text="&quot;p=866.0843144871178,755.656256107688;is=s&quot;" value="p=866.0843144871178,755.656256107688;is=s" />
+                            <literal type="string" text="&quot;p=866.0843144871178,755.6562561086193;is=s&quot;" value="p=866.0843144871178,755.6562561086193;is=s" />
                         </property-key>
                     </property>
                 </parameters>

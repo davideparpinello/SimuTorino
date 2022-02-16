@@ -34,6 +34,10 @@ element = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.CLA
 driver.get("https://lteitaly.it/it/export.php?provider=tim&type=csv")
 time.sleep(5)
 
+files = sorted(os.listdir(os.getcwd()), key=os.path.getmtime)
+newest = files[-1]
+
+print(newest)
 driver.close()
 
-shutil.move("tim_20211125_lteitaly.csv", "./utils/tim_20211125_lteitaly.csv")
+shutil.move(str(newest), "./utils/tim_lteitaly.csv")

@@ -2,3 +2,4 @@ results/
 .qtenvrc
 .metadata/
 out/
+.cmdenv-log

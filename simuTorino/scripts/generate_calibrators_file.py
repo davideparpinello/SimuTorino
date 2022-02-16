@@ -32,6 +32,8 @@ namespaces = {'': 'https://simone.5t.torino.it/ns/traffic_data.xsd'}
 
 response = requests.get(traffic_file_url)
 string_xml = response.content
+
+#GESTIRE ECCEZIONE SE SERVER NON RISPONDE
 root = ET.fromstring(string_xml)
 
 

@@ -355,7 +355,7 @@ unsigned int MobilityHeaderDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_mobilityHeaderType
+        0,    // FIELD_mobilityHeaderType
     };
     return (field >= 0 && field < 1) ? fieldTypeFlags[field] : 0;
 }
@@ -500,7 +500,6 @@ void MobilityHeaderDescriptor::setFieldValueAsString(void *object, int field, in
     }
     MobilityHeader *pp = (MobilityHeader *)object; (void)pp;
     switch (field) {
-        case FIELD_mobilityHeaderType: pp->setMobilityHeaderType((inet::MobilityHeaderType)string2enum(value, "inet::MobilityHeaderType")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'MobilityHeader'", field);
     }
 }
@@ -1226,7 +1225,7 @@ unsigned int BindingAcknowledgementDescriptor::getFieldTypeFlags(int field) cons
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_status
+        0,    // FIELD_status
         FD_ISEDITABLE,    // FIELD_sequenceNumber
         FD_ISEDITABLE,    // FIELD_lifetime
         FD_ISEDITABLE,    // FIELD_keyManagementFlag
@@ -1391,7 +1390,6 @@ void BindingAcknowledgementDescriptor::setFieldValueAsString(void *object, int f
     }
     BindingAcknowledgement *pp = (BindingAcknowledgement *)object; (void)pp;
     switch (field) {
-        case FIELD_status: pp->setStatus((inet::BaStatus)string2enum(value, "inet::BaStatus")); break;
         case FIELD_sequenceNumber: pp->setSequenceNumber(string2ulong(value)); break;
         case FIELD_lifetime: pp->setLifetime(string2ulong(value)); break;
         case FIELD_keyManagementFlag: pp->setKeyManagementFlag(string2bool(value)); break;
@@ -1598,7 +1596,7 @@ unsigned int BindingErrorDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_status
+        0,    // FIELD_status
         0,    // FIELD_homeAddress
     };
     return (field >= 0 && field < 2) ? fieldTypeFlags[field] : 0;
@@ -1748,7 +1746,6 @@ void BindingErrorDescriptor::setFieldValueAsString(void *object, int field, int 
     }
     BindingError *pp = (BindingError *)object; (void)pp;
     switch (field) {
-        case FIELD_status: pp->setStatus((inet::BeStatus)string2enum(value, "inet::BeStatus")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'BindingError'", field);
     }
 }

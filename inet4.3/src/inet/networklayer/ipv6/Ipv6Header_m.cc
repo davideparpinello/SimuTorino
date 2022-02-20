@@ -901,7 +901,7 @@ unsigned int Ipv6HeaderDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_trafficClass
         FD_ISEDITABLE,    // FIELD_flowLabel
         FD_ISEDITABLE,    // FIELD_hopLimit
-        FD_ISEDITABLE,    // FIELD_protocolId
+        0,    // FIELD_protocolId
         FD_ISARRAY | FD_ISCOMPOUND | FD_ISPOINTER | FD_ISCOBJECT | FD_ISREPLACEABLE | FD_ISRESIZABLE,    // FIELD_extensionHeader
     };
     return (field >= 0 && field < 9) ? fieldTypeFlags[field] : 0;
@@ -1094,7 +1094,6 @@ void Ipv6HeaderDescriptor::setFieldValueAsString(void *object, int field, int i,
         case FIELD_trafficClass: pp->setTrafficClass(string2long(value)); break;
         case FIELD_flowLabel: pp->setFlowLabel(string2ulong(value)); break;
         case FIELD_hopLimit: pp->setHopLimit(string2long(value)); break;
-        case FIELD_protocolId: pp->setProtocolId((inet::IpProtocolId)string2enum(value, "inet::IpProtocolId")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'Ipv6Header'", field);
     }
 }

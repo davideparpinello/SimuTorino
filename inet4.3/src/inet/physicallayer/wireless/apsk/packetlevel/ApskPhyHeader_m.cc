@@ -407,7 +407,7 @@ unsigned int ApskPhyHeaderDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_headerLengthField
         FD_ISEDITABLE,    // FIELD_payloadLengthField
         FD_ISEDITABLE,    // FIELD_crc
-        FD_ISEDITABLE,    // FIELD_crcMode
+        0,    // FIELD_crcMode
         FD_ISCOMPOUND | FD_ISPOINTER,    // FIELD_payloadProtocol
     };
     return (field >= 0 && field < 5) ? fieldTypeFlags[field] : 0;
@@ -580,7 +580,6 @@ void ApskPhyHeaderDescriptor::setFieldValueAsString(void *object, int field, int
         case FIELD_headerLengthField: pp->setHeaderLengthField(b(string2long(value))); break;
         case FIELD_payloadLengthField: pp->setPayloadLengthField(b(string2long(value))); break;
         case FIELD_crc: pp->setCrc(string2ulong(value)); break;
-        case FIELD_crcMode: pp->setCrcMode((inet::CrcMode)string2enum(value, "inet::CrcMode")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'ApskPhyHeader'", field);
     }
 }

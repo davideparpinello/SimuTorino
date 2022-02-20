@@ -360,7 +360,7 @@ unsigned int CrcHeaderDescriptor::getFieldTypeFlags(int field) const
     }
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,    // FIELD_crc
-        FD_ISEDITABLE,    // FIELD_crcMode
+        0,    // FIELD_crcMode
     };
     return (field >= 0 && field < 2) ? fieldTypeFlags[field] : 0;
 }
@@ -510,7 +510,6 @@ void CrcHeaderDescriptor::setFieldValueAsString(void *object, int field, int i, 
     CrcHeader *pp = (CrcHeader *)object; (void)pp;
     switch (field) {
         case FIELD_crc: pp->setCrc(string2ulong(value)); break;
-        case FIELD_crcMode: pp->setCrcMode((inet::CrcMode)string2enum(value, "inet::CrcMode")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'CrcHeader'", field);
     }
 }

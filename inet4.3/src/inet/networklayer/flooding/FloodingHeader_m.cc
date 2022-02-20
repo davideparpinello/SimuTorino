@@ -421,7 +421,7 @@ unsigned int FloodingHeaderDescriptor::getFieldTypeFlags(int field) const
         0,    // FIELD_destAddr
         FD_ISEDITABLE,    // FIELD_ttl
         FD_ISEDITABLE,    // FIELD_seqNum
-        FD_ISEDITABLE,    // FIELD_protocolId
+        0,    // FIELD_protocolId
         FD_ISEDITABLE,    // FIELD_payloadLengthField
     };
     return (field >= 0 && field < 6) ? fieldTypeFlags[field] : 0;
@@ -589,7 +589,6 @@ void FloodingHeaderDescriptor::setFieldValueAsString(void *object, int field, in
     switch (field) {
         case FIELD_ttl: pp->setTtl(string2long(value)); break;
         case FIELD_seqNum: pp->setSeqNum(string2ulong(value)); break;
-        case FIELD_protocolId: pp->setProtocolId((inet::IpProtocolId)string2enum(value, "inet::IpProtocolId")); break;
         case FIELD_payloadLengthField: pp->setPayloadLengthField(B(string2long(value))); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'FloodingHeader'", field);
     }

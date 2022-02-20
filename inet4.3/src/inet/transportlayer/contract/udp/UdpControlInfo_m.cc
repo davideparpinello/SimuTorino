@@ -2498,7 +2498,7 @@ unsigned int UdpSetOptionCommandDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_optionCode
+        0,    // FIELD_optionCode
     };
     return (field >= 0 && field < 1) ? fieldTypeFlags[field] : 0;
 }
@@ -2643,7 +2643,6 @@ void UdpSetOptionCommandDescriptor::setFieldValueAsString(void *object, int fiel
     }
     UdpSetOptionCommand *pp = (UdpSetOptionCommand *)object; (void)pp;
     switch (field) {
-        case FIELD_optionCode: pp->setOptionCode((inet::UdpSetOptionSubcode)string2enum(value, "inet::UdpSetOptionSubcode")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'UdpSetOptionCommand'", field);
     }
 }
@@ -7776,7 +7775,7 @@ unsigned int UdpSetMulticastSourceFilterCommandDescriptor::getFieldTypeFlags(int
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,    // FIELD_interfaceId
         0,    // FIELD_multicastAddr
-        FD_ISEDITABLE,    // FIELD_filterMode
+        0,    // FIELD_filterMode
         FD_ISARRAY | FD_ISRESIZABLE,    // FIELD_sourceList
     };
     return (field >= 0 && field < 4) ? fieldTypeFlags[field] : 0;
@@ -7937,7 +7936,6 @@ void UdpSetMulticastSourceFilterCommandDescriptor::setFieldValueAsString(void *o
     UdpSetMulticastSourceFilterCommand *pp = (UdpSetMulticastSourceFilterCommand *)object; (void)pp;
     switch (field) {
         case FIELD_interfaceId: pp->setInterfaceId(string2long(value)); break;
-        case FIELD_filterMode: pp->setFilterMode((inet::UdpSourceFilterMode)string2enum(value, "inet::UdpSourceFilterMode")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'UdpSetMulticastSourceFilterCommand'", field);
     }
 }

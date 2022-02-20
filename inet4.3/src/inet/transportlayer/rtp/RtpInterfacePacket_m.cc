@@ -644,7 +644,7 @@ unsigned int RtpControlInfoDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_type
+        0,    // FIELD_type
     };
     return (field >= 0 && field < 1) ? fieldTypeFlags[field] : 0;
 }
@@ -789,7 +789,6 @@ void RtpControlInfoDescriptor::setFieldValueAsString(void *object, int field, in
     }
     RtpControlInfo *pp = (RtpControlInfo *)object; (void)pp;
     switch (field) {
-        case FIELD_type: pp->setType((inet::rtp::RtpIfpType)string2enum(value, "inet::rtp::RtpIfpType")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'RtpControlInfo'", field);
     }
 }
@@ -2007,7 +2006,7 @@ unsigned int RtpCiSenderControlDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_command
+        0,    // FIELD_command
         FD_ISEDITABLE,    // FIELD_commandParameter1
         FD_ISEDITABLE,    // FIELD_commandParameter2
     };
@@ -2162,7 +2161,6 @@ void RtpCiSenderControlDescriptor::setFieldValueAsString(void *object, int field
     }
     RtpCiSenderControl *pp = (RtpCiSenderControl *)object; (void)pp;
     switch (field) {
-        case FIELD_command: pp->setCommand((inet::rtp::RtpSenderControlMessageCommands)string2enum(value, "inet::rtp::RtpSenderControlMessageCommands")); break;
         case FIELD_commandParameter1: pp->setCommandParameter1(string2double(value)); break;
         case FIELD_commandParameter2: pp->setCommandParameter2(string2double(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'RtpCiSenderControl'", field);
@@ -2360,7 +2358,7 @@ unsigned int RtpCiSenderStatusDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_status
+        0,    // FIELD_status
         FD_ISEDITABLE,    // FIELD_timeStamp
     };
     return (field >= 0 && field < 2) ? fieldTypeFlags[field] : 0;
@@ -2510,7 +2508,6 @@ void RtpCiSenderStatusDescriptor::setFieldValueAsString(void *object, int field,
     }
     RtpCiSenderStatus *pp = (RtpCiSenderStatus *)object; (void)pp;
     switch (field) {
-        case FIELD_status: pp->setStatus((inet::rtp::RtpSenderStatus)string2enum(value, "inet::rtp::RtpSenderStatus")); break;
         case FIELD_timeStamp: pp->setTimeStamp(string2ulong(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'RtpCiSenderStatus'", field);
     }

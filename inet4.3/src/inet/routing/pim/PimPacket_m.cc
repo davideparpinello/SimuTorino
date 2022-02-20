@@ -1292,7 +1292,7 @@ unsigned int HelloOptionDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_type
+        0,    // FIELD_type
     };
     return (field >= 0 && field < 1) ? fieldTypeFlags[field] : 0;
 }
@@ -1437,7 +1437,6 @@ void HelloOptionDescriptor::setFieldValueAsString(void *object, int field, int i
     }
     HelloOption *pp = (HelloOption *)object; (void)pp;
     switch (field) {
-        case FIELD_type: pp->setType((inet::PimHelloOptionType)string2enum(value, "inet::PimHelloOptionType")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'HelloOption'", field);
     }
 }
@@ -3388,10 +3387,10 @@ unsigned int PimPacketDescriptor::getFieldTypeFlags(int field) const
     }
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,    // FIELD_version
-        FD_ISEDITABLE,    // FIELD_type
+        0,    // FIELD_type
         FD_ISEDITABLE,    // FIELD_reserved
         FD_ISEDITABLE,    // FIELD_crc
-        FD_ISEDITABLE,    // FIELD_crcMode
+        0,    // FIELD_crcMode
     };
     return (field >= 0 && field < 5) ? fieldTypeFlags[field] : 0;
 }
@@ -3560,10 +3559,8 @@ void PimPacketDescriptor::setFieldValueAsString(void *object, int field, int i, 
     PimPacket *pp = (PimPacket *)object; (void)pp;
     switch (field) {
         case FIELD_version: pp->setVersion(string2long(value)); break;
-        case FIELD_type: pp->setType((inet::PimPacketType)string2enum(value, "inet::PimPacketType")); break;
         case FIELD_reserved: pp->setReserved(string2long(value)); break;
         case FIELD_crc: pp->setCrc(string2ulong(value)); break;
-        case FIELD_crcMode: pp->setCrcMode((inet::CrcMode)string2enum(value, "inet::CrcMode")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'PimPacket'", field);
     }
 }

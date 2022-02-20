@@ -427,7 +427,7 @@ unsigned int NextHopForwardingHeaderDescriptor::getFieldTypeFlags(int field) con
     static unsigned int fieldTypeFlags[] = {
         0,    // FIELD_srcAddr
         0,    // FIELD_destAddr
-        FD_ISEDITABLE,    // FIELD_protocolId
+        0,    // FIELD_protocolId
         FD_ISEDITABLE,    // FIELD_hopLimit
         FD_ISEDITABLE,    // FIELD_payloadLengthField
         FD_ISCOMPOUND | FD_ISCOBJECT,    // FIELD_tlvOptions
@@ -595,7 +595,6 @@ void NextHopForwardingHeaderDescriptor::setFieldValueAsString(void *object, int 
     }
     NextHopForwardingHeader *pp = (NextHopForwardingHeader *)object; (void)pp;
     switch (field) {
-        case FIELD_protocolId: pp->setProtocolId((inet::IpProtocolId)string2enum(value, "inet::IpProtocolId")); break;
         case FIELD_hopLimit: pp->setHopLimit(string2long(value)); break;
         case FIELD_payloadLengthField: pp->setPayloadLengthField(B(string2long(value))); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'NextHopForwardingHeader'", field);

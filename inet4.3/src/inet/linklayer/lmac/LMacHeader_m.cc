@@ -490,7 +490,7 @@ unsigned int LMacHeaderBaseDescriptor::getFieldTypeFlags(int field) const
     static unsigned int fieldTypeFlags[] = {
         0,    // FIELD_srcAddr
         0,    // FIELD_destAddr
-        FD_ISEDITABLE,    // FIELD_type
+        0,    // FIELD_type
         FD_ISEDITABLE,    // FIELD_mySlot
         FD_ISARRAY | FD_ISRESIZABLE,    // FIELD_occupiedSlots
     };
@@ -655,7 +655,6 @@ void LMacHeaderBaseDescriptor::setFieldValueAsString(void *object, int field, in
     }
     LMacHeaderBase *pp = (LMacHeaderBase *)object; (void)pp;
     switch (field) {
-        case FIELD_type: pp->setType((inet::LMacType)string2enum(value, "inet::LMacType")); break;
         case FIELD_mySlot: pp->setMySlot(string2long(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'LMacHeaderBase'", field);
     }

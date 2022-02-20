@@ -1848,7 +1848,7 @@ unsigned int Ipv4OptionTimestampDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_flag
+        0,    // FIELD_flag
         FD_ISEDITABLE,    // FIELD_overflow
         FD_ISEDITABLE,    // FIELD_nextIdx
         FD_ISARRAY | FD_ISRESIZABLE,    // FIELD_recordAddress
@@ -2017,7 +2017,6 @@ void Ipv4OptionTimestampDescriptor::setFieldValueAsString(void *object, int fiel
     }
     Ipv4OptionTimestamp *pp = (Ipv4OptionTimestamp *)object; (void)pp;
     switch (field) {
-        case FIELD_flag: pp->setFlag((inet::TimestampFlag)string2enum(value, "inet::TimestampFlag")); break;
         case FIELD_overflow: pp->setOverflow(string2long(value)); break;
         case FIELD_nextIdx: pp->setNextIdx(string2long(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'Ipv4OptionTimestamp'", field);
@@ -3470,9 +3469,9 @@ unsigned int Ipv4HeaderDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_dontFragment
         FD_ISEDITABLE,    // FIELD_fragmentOffset
         FD_ISEDITABLE,    // FIELD_timeToLive
-        FD_ISEDITABLE,    // FIELD_protocolId
+        0,    // FIELD_protocolId
         FD_ISEDITABLE,    // FIELD_crc
-        FD_ISEDITABLE,    // FIELD_crcMode
+        0,    // FIELD_crcMode
         0,    // FIELD_srcAddress
         0,    // FIELD_destAddress
         FD_ISCOMPOUND | FD_ISCOBJECT,    // FIELD_options
@@ -3697,9 +3696,7 @@ void Ipv4HeaderDescriptor::setFieldValueAsString(void *object, int field, int i,
         case FIELD_dontFragment: pp->setDontFragment(string2bool(value)); break;
         case FIELD_fragmentOffset: pp->setFragmentOffset(string2ulong(value)); break;
         case FIELD_timeToLive: pp->setTimeToLive(string2long(value)); break;
-        case FIELD_protocolId: pp->setProtocolId((inet::IpProtocolId)string2enum(value, "inet::IpProtocolId")); break;
         case FIELD_crc: pp->setCrc(string2ulong(value)); break;
-        case FIELD_crcMode: pp->setCrcMode((inet::CrcMode)string2enum(value, "inet::CrcMode")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'Ipv4Header'", field);
     }
 }

@@ -449,7 +449,7 @@ unsigned int Ipv6NdOptionDescriptor::getFieldTypeFlags(int field) const
         field -= basedesc->getFieldCount();
     }
     static unsigned int fieldTypeFlags[] = {
-        FD_ISEDITABLE,    // FIELD_type
+        0,    // FIELD_type
         FD_ISEDITABLE,    // FIELD_optionLength
         FD_ISARRAY | FD_ISEDITABLE | FD_ISRESIZABLE,    // FIELD_paddingBytes
     };
@@ -606,7 +606,6 @@ void Ipv6NdOptionDescriptor::setFieldValueAsString(void *object, int field, int 
     }
     Ipv6NdOption *pp = (Ipv6NdOption *)object; (void)pp;
     switch (field) {
-        case FIELD_type: pp->setType((inet::Ipv6NdOptionTypes)string2enum(value, "inet::Ipv6NdOptionTypes")); break;
         case FIELD_optionLength: pp->setOptionLength(string2long(value)); break;
         case FIELD_paddingBytes: pp->setPaddingBytes(i,string2long(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'Ipv6NdOption'", field);

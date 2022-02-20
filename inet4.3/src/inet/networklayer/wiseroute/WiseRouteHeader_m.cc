@@ -489,8 +489,8 @@ unsigned int WiseRouteHeaderDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_seqNum
         FD_ISEDITABLE,    // FIELD_isFlood
         FD_ISEDITABLE,    // FIELD_nbHops
-        FD_ISEDITABLE,    // FIELD_headerKind
-        FD_ISEDITABLE,    // FIELD_protocolId
+        0,    // FIELD_headerKind
+        0,    // FIELD_protocolId
         0,    // FIELD_finalDestAddr
         0,    // FIELD_initialSrcAddr
         FD_ISEDITABLE,    // FIELD_payloadLengthField
@@ -684,8 +684,6 @@ void WiseRouteHeaderDescriptor::setFieldValueAsString(void *object, int field, i
         case FIELD_seqNum: pp->setSeqNum(string2ulong(value)); break;
         case FIELD_isFlood: pp->setIsFlood(string2long(value)); break;
         case FIELD_nbHops: pp->setNbHops(string2long(value)); break;
-        case FIELD_headerKind: pp->setHeaderKind((inet::WiseRouteMsgType)string2enum(value, "inet::WiseRouteMsgType")); break;
-        case FIELD_protocolId: pp->setProtocolId((inet::IpProtocolId)string2enum(value, "inet::IpProtocolId")); break;
         case FIELD_payloadLengthField: pp->setPayloadLengthField(B(string2long(value))); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'WiseRouteHeader'", field);
     }

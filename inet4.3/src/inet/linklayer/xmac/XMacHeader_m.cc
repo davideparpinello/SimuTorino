@@ -396,7 +396,7 @@ unsigned int XMacHeaderBaseDescriptor::getFieldTypeFlags(int field) const
     static unsigned int fieldTypeFlags[] = {
         0,    // FIELD_srcAddr
         0,    // FIELD_destAddr
-        FD_ISEDITABLE,    // FIELD_type
+        0,    // FIELD_type
     };
     return (field >= 0 && field < 3) ? fieldTypeFlags[field] : 0;
 }
@@ -549,7 +549,6 @@ void XMacHeaderBaseDescriptor::setFieldValueAsString(void *object, int field, in
     }
     XMacHeaderBase *pp = (XMacHeaderBase *)object; (void)pp;
     switch (field) {
-        case FIELD_type: pp->setType((inet::XMacTypes)string2enum(value, "inet::XMacTypes")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'XMacHeaderBase'", field);
     }
 }

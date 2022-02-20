@@ -360,7 +360,7 @@ unsigned int FcsHeaderDescriptor::getFieldTypeFlags(int field) const
     }
     static unsigned int fieldTypeFlags[] = {
         FD_ISEDITABLE,    // FIELD_fcs
-        FD_ISEDITABLE,    // FIELD_fcsMode
+        0,    // FIELD_fcsMode
     };
     return (field >= 0 && field < 2) ? fieldTypeFlags[field] : 0;
 }
@@ -510,7 +510,6 @@ void FcsHeaderDescriptor::setFieldValueAsString(void *object, int field, int i, 
     FcsHeader *pp = (FcsHeader *)object; (void)pp;
     switch (field) {
         case FIELD_fcs: pp->setFcs(string2ulong(value)); break;
-        case FIELD_fcsMode: pp->setFcsMode((inet::FcsMode)string2enum(value, "inet::FcsMode")); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'FcsHeader'", field);
     }
 }

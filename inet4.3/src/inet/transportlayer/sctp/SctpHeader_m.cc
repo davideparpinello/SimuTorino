@@ -440,7 +440,7 @@ unsigned int SctpHeaderDescriptor::getFieldTypeFlags(int field) const
         FD_ISEDITABLE,    // FIELD_vTag
         FD_ISEDITABLE,    // FIELD_checksumOk
         FD_ISEDITABLE,    // FIELD_crc
-        FD_ISEDITABLE,    // FIELD_crcMode
+        0,    // FIELD_crcMode
         FD_ISEDITABLE,    // FIELD_headerLength
         FD_ISARRAY | FD_ISCOMPOUND | FD_ISPOINTER | FD_ISCOBJECT | FD_ISCOWNEDOBJECT | FD_ISREPLACEABLE | FD_ISRESIZABLE,    // FIELD_sctpChunks
     };
@@ -623,7 +623,6 @@ void SctpHeaderDescriptor::setFieldValueAsString(void *object, int field, int i,
         case FIELD_vTag: pp->setVTag(string2ulong(value)); break;
         case FIELD_checksumOk: pp->setChecksumOk(string2bool(value)); break;
         case FIELD_crc: pp->setCrc(string2ulong(value)); break;
-        case FIELD_crcMode: pp->setCrcMode((inet::CrcMode)string2enum(value, "inet::CrcMode")); break;
         case FIELD_headerLength: pp->setHeaderLength(string2ulong(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'SctpHeader_Base'", field);
     }

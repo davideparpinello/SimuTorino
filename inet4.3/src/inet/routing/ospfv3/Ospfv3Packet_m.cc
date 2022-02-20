@@ -1698,7 +1698,7 @@ unsigned int Ospfv3LsaHeaderDescriptor::getFieldTypeFlags(int field) const
         0,    // FIELD_advertisingRouter
         FD_ISEDITABLE,    // FIELD_lsaSequenceNumber
         FD_ISEDITABLE,    // FIELD_lsaChecksum
-        FD_ISEDITABLE,    // FIELD_lsCrcMode
+        0,    // FIELD_lsCrcMode
         FD_ISEDITABLE,    // FIELD_lsaLength
     };
     return (field >= 0 && field < 9) ? fieldTypeFlags[field] : 0;
@@ -1881,7 +1881,6 @@ void Ospfv3LsaHeaderDescriptor::setFieldValueAsString(void *object, int field, i
         case FIELD_lsaType: pp->setLsaType(string2ulong(value)); break;
         case FIELD_lsaSequenceNumber: pp->setLsaSequenceNumber(string2ulong(value)); break;
         case FIELD_lsaChecksum: pp->setLsaChecksum(string2ulong(value)); break;
-        case FIELD_lsCrcMode: pp->setLsCrcMode((inet::CrcMode)string2enum(value, "inet::CrcMode")); break;
         case FIELD_lsaLength: pp->setLsaLength(string2ulong(value)); break;
         default: throw omnetpp::cRuntimeError("Cannot set field %d of class 'Ospfv3LsaHeader'", field);
     }

@@ -49,7 +49,12 @@
 
 ### Team
 
+The team is composed by Brando Chiminelli, Alessio Juan De Paoli, Davide Parpinello and Davide Zordan, four students of the courses Next Generation Networks and Softwarized and Virtualized Mobile Networks given by prof. Fabrizio Granelli.
+
 ### Project
+
+- Intro to the project
+- How to launch the project
 
 ## Vagrant Configuration 🖥
 

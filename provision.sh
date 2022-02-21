@@ -85,4 +85,5 @@ mv Simu5G-1.2.0 simu5g
 chmod +x /vagrant/scripts/compile_libraries.sh
 /vagrant/scripts/compile_libraries.sh 
 
-echo ""
+printf "\n\n-----\tVAGRANT READY\t-----\n"
+printf "Please login into the VM using \'vagrant ssh\'"

@@ -72,11 +72,11 @@ python3 -m pip install --user --upgrade traci sumolib
 echo "Downloading INET, Veins and Simu5g"
 cd
 wget https://github.com/inet-framework/inet/releases/download/v4.3.2/inet-4.3.2-src.tgz
-tar xzvf inet-4.3.2-src.gz
+tar xzvf inet-4.3.2-src.tgz
 
 wget https://veins.car2x.org/download/veins-5.2.zip
 unzip veins-5.2.zip
-mv veins-veins5.2 veins
+mv veins-veins-5.2 veins
 
 wget https://github.com/Unipisa/Simu5G/archive/refs/tags/v1.2.0.tar.gz
 tar xzvf v1.2.0.tar.gz

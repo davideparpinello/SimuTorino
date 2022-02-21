@@ -29,7 +29,6 @@
       </ul>
     </li>
     <li><a href="#vagrant-configuration-">Vagrant Configuration 🖥</a></li>
-    <li><a href="#docker-configuration-">Docker Configuration 🐳</a>
     </li>
     <li>
       <a href="#conclusions-">Conclusions 💡</a>
@@ -49,8 +48,6 @@
 ### Project
 
 ## Vagrant Configuration 🖥
-
-## Docker Configuration 🐳
 
 ## Conclusions 💡
 

@@ -31,10 +31,10 @@ print("\nReconverting .ned.xml in .ned..")
 os.system("opp_nedtool c utils/Crocetta.ned.xml -o utils/Crocetta.ned")
 
 print("\nExecuting veins_launchd script..")
-os.system("../veins/bin/veins_launchd -vv -d -P utils/veins.pid -k") # -d to launch as a daemon; -k to kill existing daemons
+os.system("/home/vagrant/veins/bin/veins_launchd -vv -d -P utils/veins.pid -k") # -d to launch as a daemon; -k to kill existing daemons
 
 print("\nSetting Simu5g environment.. ")
-os.system('/bin/bash -c "cd ../simu5g; . setenv -f"')
+os.system('/bin/bash -c "cd /home/vagrant/simu5g; . setenv -f"')
 
 print("\nOpening Omnet in new terminal..")
 subprocess.Popen(shlex.split("xterm -e ./launch_simu5g.sh -ls"), cwd="./scripts")

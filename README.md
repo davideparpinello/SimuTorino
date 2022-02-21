@@ -1,5 +1,8 @@
 <br />
-
+<p align="center">
+  <a href="https://github.com/davideparpinello/SimuTorino">
+    <img src="https://cdn-icons.flaticon.com/png/512/2966/premium/2966677.png?token=exp=1645437235~hmac=3f684362bdc7499e8dbb2100c160bfb1" alt="Logo" width="210"> 
+  </a>
   <h3 align="center">Simulating 5G-enabled vehicular networks in a Turin urban context</h3>
 
   <p align="center">

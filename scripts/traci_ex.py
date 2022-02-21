@@ -55,10 +55,12 @@ try:
         step += 0.1
     traci.close()
 except traci.exceptions.FatalTraCIError:
-    print("TraCI is closing for simulation ending")
+    print("TraCI is closing for simulation ending\n")
 
 except ET.ParseError:
-    print("Error in reading")
+    print("Error in XML parsing, probably because of Opendata Server not responding. Please try later.\n")
+    sys.exit(1)
+
 
 
 

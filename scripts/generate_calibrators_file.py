@@ -70,9 +70,10 @@ try:
             current_flow_elem.set("speed", str(flow_speed_value))
             i += 1
 
-except Exception as e:
-    print("Opendata is not compatible with XML, probably due to Server not responding.\n")
+except ET.ParseError:
+    print("Error in XML parsing, probably because of Opendata Server not responding.\n")
     print("Generating calibrators with random flows..\n")
+
     with open(input_file, "r") as calibrators_db:
         data = json.load(calibrators_db)
         i = 1
@@ -97,7 +98,7 @@ except Exception as e:
             current_flow_elem.set("departPos", flow_departPos_value)
             current_flow_elem.set("departSpeed", flow_departSpeed_value)
             current_flow_elem.set("route", flow_route_prefix + str(i))
-            current_flow_elem.set("vehsPerHour", str(random.randrange(100,1000)))
+            current_flow_elem.set("vehsPerHour", str(random.randrange(50,800)))
             current_flow_elem.set("speed", str(flow_speed_value))
             i += 1
 

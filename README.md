@@ -53,6 +53,9 @@ The team is composed by Brando Chiminelli, Alessio Juan De Paoli, Davide Parpine
 
 ### Project
 
+- Intro to the project
+- How to launch the project
+
 ## Vagrant Configuration 🖥
 
 ## Conclusions 💡

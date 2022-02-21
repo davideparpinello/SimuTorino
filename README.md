@@ -13,7 +13,11 @@
     <br />
     <a href="https://github.com/Bralli99">Brando Chiminelli</a>
     |
+    <a href="https://github.com/AlessioDP123">Alessio Juan De Paoli</a>
+    |
     <a href="https://github.com/davideparpinello">Davide Parpinello</a>
+    |
+    <a href="https://github.com/davidezordan25">Davide Zordan</a>
   </p>
 </p>
 

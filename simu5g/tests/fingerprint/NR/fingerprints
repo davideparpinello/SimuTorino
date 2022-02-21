@@ -1,3 +1,0 @@
-#!/bin/sh
-
-./nr_fingerprinttest -C ../../.. -e ../../../bin/simu5g $*

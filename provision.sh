@@ -69,6 +69,18 @@ echo "export SUMO_HOME=/usr/local/share/sumo" >> ~/.bashrc
 
 python3 -m pip install --user --upgrade traci sumolib
 
-cd /vagrant
-chmod +x simuTorino/scripts/compile_libraries.sh
-./simuTorino/scripts/compile_libraries.sh 
+echo "Downloading INET, Veins and Simu5g"
+cd
+wget https://github.com/inet-framework/inet/releases/download/v4.3.2/inet-4.3.2-src.tgz
+tar xzvf inet-4.3.2-src.gz
+
+wget https://veins.car2x.org/download/veins-5.2.zip
+unzip veins-5.2.zip
+mv veins-veins5.2 veins
+
+wget https://github.com/Unipisa/Simu5G/archive/refs/tags/v1.2.0.tar.gz
+tar xzvf v1.2.0.tar.gz
+mv Simu5G-1.2.0 simu5g
+
+chmod +x /vagrant/scripts/compile_libraries.sh
+/vagrant/scripts/compile_libraries.sh 

@@ -57,6 +57,10 @@ try:
 except traci.exceptions.FatalTraCIError:
     print("TraCI is closing for simulation ending")
 
+except ET.ParseError:
+    print("Error in reading")
+
+
 
 
     

@@ -1,6 +1,7 @@
 import json
 import xml.etree.ElementTree as ET
 import requests
+import random
 
 color_value = 'yellow'
 route_prefix = 'route_'
@@ -33,42 +34,72 @@ namespaces = {'': 'https://simone.5t.torino.it/ns/traffic_data.xsd'}
 response = requests.get(traffic_file_url)
 string_xml = response.content
 
-#GESTIRE ECCEZIONE SE SERVER NON RISPONDE
-root = ET.fromstring(string_xml)
+try:
+    root = ET.fromstring(string_xml)    
 
+    with open(input_file, "r") as calibrators_db:
+        data = json.load(calibrators_db)
+        i = 1
+        for calibrator in data['calibrators']:
+            current_lat = calibrator['pos']['lat']
+            current_lon = calibrator['pos']['lon']
+            for node in root.findall(xml_node_elem, namespaces):
+                if node.attrib['lat'] == str(current_lat) and node.attrib['lng'] == str(current_lon) :
+                    speedflow = node.find('speedflow', namespaces)
+                    current_flow = speedflow.attrib['flow']
+                    current_speed = speedflow.attrib['speed']
 
-with open(input_file, "r") as calibrators_db:
-    data = json.load(calibrators_db)
-    i = 1
-    for calibrator in data['calibrators']:
-        current_lat = calibrator['pos']['lat']
-        current_lon = calibrator['pos']['lon']
-        for node in root.findall(xml_node_elem, namespaces):
-            if node.attrib['lat'] == str(current_lat) and node.attrib['lng'] == str(current_lon) :
-                speedflow = node.find('speedflow', namespaces)
-                current_flow = speedflow.attrib['flow']
-                current_speed = speedflow.attrib['speed']
+            current_route_elem = ET.SubElement(output_file_root, 'route')
+            current_route_elem.set("edges", calibrator['edge'])
+            current_route_elem.set("color", color_value)
+            current_route_elem.set("id", route_prefix + calibrator['id'])
 
-        current_route_elem = ET.SubElement(output_file_root, 'route')
-        current_route_elem.set("edges", calibrator['edge'])
-        current_route_elem.set("color", color_value)
-        current_route_elem.set("id", route_prefix + calibrator['id'])
+            current_cal_elem = ET.SubElement(output_file_root, 'calibrator')
+            current_cal_elem.set("id", cal_prefix + calibrator['id'])
+            current_cal_elem.set("edge", calibrator['edge'])
+            current_cal_elem.set("pos", str(pos_value))
+            current_cal_elem.set("freq", str(freq_value))
 
-        current_cal_elem = ET.SubElement(output_file_root, 'calibrator')
-        current_cal_elem.set("id", cal_prefix + calibrator['id'])
-        current_cal_elem.set("edge", calibrator['edge'])
-        current_cal_elem.set("pos", str(pos_value))
-        current_cal_elem.set("freq", str(freq_value))
+            current_flow_elem = ET.SubElement(current_cal_elem, 'flow')
+            current_flow_elem.set("begin", str(flow_begin_value))
+            current_flow_elem.set("end", str(flow_end_value))
+            current_flow_elem.set("departPos", flow_departPos_value)
+            current_flow_elem.set("departSpeed", flow_departSpeed_value)
+            current_flow_elem.set("route", flow_route_prefix + str(i))
+            current_flow_elem.set("vehsPerHour", str(current_flow))
+            current_flow_elem.set("speed", str(flow_speed_value))
+            i += 1
 
-        current_flow_elem = ET.SubElement(current_cal_elem, 'flow')
-        current_flow_elem.set("begin", str(flow_begin_value))
-        current_flow_elem.set("end", str(flow_end_value))
-        current_flow_elem.set("departPos", flow_departPos_value)
-        current_flow_elem.set("departSpeed", flow_departSpeed_value)
-        current_flow_elem.set("route", flow_route_prefix + str(i))
-        current_flow_elem.set("vehsPerHour", str(current_flow))
-        current_flow_elem.set("speed", str(flow_speed_value))
-        i += 1
+except Exception as e:
+    print("Opendata is not compatible with XML, probably due to Server not responding.\n")
+    print("Generating calibrators with random flows..\n")
+    with open(input_file, "r") as calibrators_db:
+        data = json.load(calibrators_db)
+        i = 1
+        for calibrator in data['calibrators']:
+            current_lat = calibrator['pos']['lat']
+            current_lon = calibrator['pos']['lon']
+       
+            current_route_elem = ET.SubElement(output_file_root, 'route')
+            current_route_elem.set("edges", calibrator['edge'])
+            current_route_elem.set("color", color_value)
+            current_route_elem.set("id", route_prefix + calibrator['id'])
+
+            current_cal_elem = ET.SubElement(output_file_root, 'calibrator')
+            current_cal_elem.set("id", cal_prefix + calibrator['id'])
+            current_cal_elem.set("edge", calibrator['edge'])
+            current_cal_elem.set("pos", str(pos_value))
+            current_cal_elem.set("freq", str(freq_value))
+
+            current_flow_elem = ET.SubElement(current_cal_elem, 'flow')
+            current_flow_elem.set("begin", str(flow_begin_value))
+            current_flow_elem.set("end", str(flow_end_value))
+            current_flow_elem.set("departPos", flow_departPos_value)
+            current_flow_elem.set("departSpeed", flow_departSpeed_value)
+            current_flow_elem.set("route", flow_route_prefix + str(i))
+            current_flow_elem.set("vehsPerHour", str(random.randrange(100,1000)))
+            current_flow_elem.set("speed", str(flow_speed_value))
+            i += 1
 
 tree = ET.ElementTree(output_file_root)
 tree.write(output_file)

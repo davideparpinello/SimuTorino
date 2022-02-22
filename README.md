@@ -30,6 +30,9 @@
       <ul>
         <li><a href="#team">Team</a></li>
         <li><a href="#project">Project</a></li>
+          <ul>
+        <li><a href="#built-with">Built With</a></li>
+      </ul>
       </ul>
     </li>
     <li><a href="#getting-started">Getting Started</a></li>
@@ -37,9 +40,9 @@
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#vagrant-configuration">Vagrant Configuration</a></li>
         <li><a href="#installation">Installation</a></li>
-        <li><a href="#usage">Usage</a></li>
       </ul>
     </li>
+    <li><a href="#usage">Usage</a></li>
     <li>
       <a href="#conclusions">Conclusions</a>
     </li>
@@ -59,16 +62,34 @@ The team is composed by Brando Chiminelli, Alessio Juan De Paoli, Davide Parpine
 
 ### Project
 
-- Intro to the project
-The goal of the project is to simulate the traffic in an urban context and implement a 5G network that enables vehicular communications.
+The goal of the project is to simulate the traffic in an urban context and implement a 5G network that enables vehicular communications, using real data about the traffic flows and the position of the antennas.
+The district analyzed is "Crocetta" located in the city centre of Turin. This map fits well the project as it has 10 road traffic sensors and 17 base stations (BTS).
+
+#### Built With
+
+* [INET 4.3.2](https://inet.omnetpp.org/)
+* [Veins 5.2](https://reactjs.org/)
+* [Simu5g 1.2](http://simu5g.org/)
+* [OMNeT++ 6.0](https://omnetpp.org/)
+* [SUMO 1.8.0](https://www.eclipse.org/sumo/)
 
 ## Getting Started
 ### Prerequisites
-- How to launch the project (vagrant, virtual box, X11 Client)
+In order to run the project you need to have installed:
+* [Vagrant](https://www.vagrantup.com/)
+* [Virtual Box](https://www.virtualbox.org/)
+* [X11 Client?]()
+
 ### Vagrant Configuration
+
 ### Installation
-### Usage
+
+## Usage
 
 ## Conclusions
 
 ## Credits
+
+Thanks to:
+* [5T Srl](https://www.5t.torino.it/) for providing open data about traffic flow in Turin
+* [LTE Italy](https://lteitaly.it/) for providing open data about BTS 

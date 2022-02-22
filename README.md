@@ -93,3 +93,4 @@ In order to run the project you need to have installed:
 Thanks to:
 * [5T Srl](https://www.5t.torino.it/) for providing open data about traffic flow in Turin
 * [LTE Italy](https://lteitaly.it/) for providing open data about BTS 
+* [Giovanni Nardini](http://www.iet.unipi.it/g.nardini/research.html) for Simu5g support

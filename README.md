@@ -26,26 +26,32 @@
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
     <li>
-      <a href="#about-">About 🔍</a>
+      <a href="#about">About</a>
       <ul>
         <li><a href="#team">Team</a></li>
         <li><a href="#project">Project</a></li>
       </ul>
     </li>
-    <li><a href="#vagrant-configuration-">Vagrant Configuration 🖥</a></li>
+    <li><a href="#getting-started">Getting Started</a></li>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#vagrant-configuration">Vagrant Configuration</a></li>
+        <li><a href="#installation">Installation</a></li>
+        <li><a href="#usage">Usage</a></li>
+      </ul>
     </li>
     <li>
-      <a href="#conclusions-">Conclusions 💡</a>
+      <a href="#conclusions">Conclusions</a>
     </li>
     <li>
-      <a href="#credits-">Credits 📓</a>
+      <a href="#credits">Credits</a>
     </li>
   </ol>
 </details>
 
 <!-- ABOUT THE PROJECT -->
 
-## About 🔍
+## About
 
 ### Team
 
@@ -54,10 +60,15 @@ The team is composed by Brando Chiminelli, Alessio Juan De Paoli, Davide Parpine
 ### Project
 
 - Intro to the project
-- How to launch the project
+The goal of the project is to simulate the traffic in an urban context and implement a 5G network that enables vehicular communications.
 
-## Vagrant Configuration 🖥
+## Getting Started
+### Prerequisites
+- How to launch the project (vagrant, virtual box, X11 Client)
+### Vagrant Configuration
+### Installation
+### Usage
 
-## Conclusions 💡
+## Conclusions
 
-## Credits 📓
+## Credits

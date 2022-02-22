@@ -24,8 +24,8 @@ sudo mv chromedriver /usr/local/bin/
 
 echo "Installing Python packages required by OMNeT++"
 
-echo "export PATH=$PATH:/home/vagrant/.local/bin" >> ~/.bashrc
-export PATH=$PATH:/home/vagrant/.local/bin
+echo "export PATH=$PATH:$HOME/.local/bin" >> ~/.bashrc
+export PATH=$PATH:$HOME/.local/bin
 python3 -m pip install --upgrade pip
 python3 -m pip install --user --upgrade numpy pandas matplotlib scipy seaborn posix_ipc pyproj selenium rtree requests urllib3 chardet PyVirtualDisplay
 

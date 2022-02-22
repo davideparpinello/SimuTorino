@@ -38,14 +38,10 @@
     <li><a href="#getting-started">Getting Started</a></li>
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#vagrant-configuration">Vagrant Configuration</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
     <li><a href="#usage">Usage</a></li>
-    <li>
-      <a href="#conclusions">Conclusions</a>
-    </li>
     <li>
       <a href="#credits">Credits</a>
     </li>
@@ -81,13 +77,33 @@ In order to run the project you need to have installed:
 * X11 Client:
   * [XQuartz](https://www.xquartz.org/) for macOS users 
   * [MobaXterm](https://mobaxterm.mobatek.net/) for Windows users
-### Vagrant Configuration
 
 ### Installation
 
+1. Clone this repository 
+2. Enter the repo directory
+3. ```sh
+   vagrant up
+   ```
+   This command creates and configures guest machines according to the Vagrantfile.
+   The first time you launch it, you have to wait for the project to build, it could take about one hour.
+   
+
 ## Usage
 
-## Conclusions
+1. With the following command you log into the VM.
+   ```sh
+   vagrant ssh
+   ```
+2. To enter the mounted directory:
+   ```sh
+   cd /vagrant
+   ```
+3. To launch the project:
+   ```sh
+   python3 launch_simu.py
+   ```
+   
 
 ## Credits
 

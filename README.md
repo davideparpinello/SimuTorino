@@ -63,12 +63,12 @@ The team is composed by Brando Chiminelli, Alessio Juan De Paoli, Davide Parpine
 ### Project
 
 The goal of the project is to simulate the traffic in an urban context and implement a 5G network that enables vehicular communications, using real data about the traffic flows and the position of the antennas.
-The district analyzed is "Crocetta" located in the city centre of Turin. This map fits well the project as it has 10 road traffic sensors and 17 base stations (BTS).
+\\The district analyzed is "Crocetta" located in the city centre of Turin. This map fits well the project as it has 10 road traffic sensors and 17 base stations (BTS).
 
 #### Built With
 
 * [INET 4.3.2](https://inet.omnetpp.org/)
-* [Veins 5.2](https://reactjs.org/)
+* [Veins 5.2](https://veins.car2x.org/)
 * [Simu5g 1.2](http://simu5g.org/)
 * [OMNeT++ 6.0](https://omnetpp.org/)
 * [SUMO 1.8.0](https://www.eclipse.org/sumo/)

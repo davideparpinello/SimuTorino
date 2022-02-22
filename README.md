@@ -76,10 +76,11 @@ The goal of the project is to simulate the traffic in an urban context and imple
 ## Getting Started
 ### Prerequisites
 In order to run the project you need to have installed:
-* [Vagrant](https://www.vagrantup.com/)
-* [Virtual Box](https://www.virtualbox.org/)
-* [X11 Client?]()
-
+* [Vagrant 2.2.19](https://www.vagrantup.com/)
+* [Virtual Box 6.1.32](https://www.virtualbox.org/)
+* X11 Client:
+  * [XQuartz](https://www.xquartz.org/) for macOS users 
+  * [MobaXterm](https://mobaxterm.mobatek.net/) for Windows users
 ### Vagrant Configuration
 
 ### Installation

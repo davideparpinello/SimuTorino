@@ -70,14 +70,14 @@ The district analyzed is "Crocetta" located in the city centre of Turin. This ma
 * [INET 4.3.2](https://inet.omnetpp.org/)
 * [Veins 5.2](https://veins.car2x.org/)
 * [Simu5g 1.2](http://simu5g.org/)
-* [OMNeT++ 6.0](https://omnetpp.org/)
+* [OMNeT++ 6.0 pre11](https://github.com/omnetpp/omnetpp/releases/tag/omnetpp-6.0pre11)
 * [SUMO 1.8.0](https://www.eclipse.org/sumo/)
 
 ## Getting Started
 ### Prerequisites
 In order to run the project you need to have installed:
 * [Vagrant 2.2.19](https://www.vagrantup.com/)
-* [Virtualbox 6.1.32](https://www.virtualbox.org/)
+* [VirtualBox 6.1.32](https://www.virtualbox.org/)
 * X11 Client:
   * [XQuartz](https://www.xquartz.org/) for macOS users 
   * [MobaXterm](https://mobaxterm.mobatek.net/) for Windows users

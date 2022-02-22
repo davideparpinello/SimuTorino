@@ -77,7 +77,7 @@ The district analyzed is "Crocetta" located in the city centre of Turin. This ma
 ### Prerequisites
 In order to run the project you need to have installed:
 * [Vagrant 2.2.19](https://www.vagrantup.com/)
-* [Virtual Box 6.1.32](https://www.virtualbox.org/)
+* [Virtualbox 6.1.32](https://www.virtualbox.org/)
 * X11 Client:
   * [XQuartz](https://www.xquartz.org/) for macOS users 
   * [MobaXterm](https://mobaxterm.mobatek.net/) for Windows users

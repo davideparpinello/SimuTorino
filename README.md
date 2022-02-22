@@ -75,7 +75,14 @@ In order to run the project you need to have installed:
 * [Vagrant 2.2.19](https://www.vagrantup.com/)
 * [VirtualBox 6.1.32](https://www.virtualbox.org/)
 * X11 Client:
-  * [XQuartz](https://www.xquartz.org/) for macOS users 
+  * [XQuartz](https://www.xquartz.org/) for macOS users, please note that you have to check if glx is enabled (1 = enabled)
+    ```sh
+    defaults read org.xquartz.X11 enable_iglx
+    ```
+    otherwise enter the following command and restart the machine
+    ```sh
+    defaults write org.xquartz.X11 enable_iglx -bool true
+    ```
   * [MobaXterm](https://mobaxterm.mobatek.net/) for Windows users
 
 ### Installation
@@ -103,7 +110,8 @@ In order to run the project you need to have installed:
    ```sh
    python3 launch_simu.py
    ```
-   
+
+Now you can have fun playing with the project as two windows will appear, one with the SUMO interface and the other with OMNet.
 
 ## Credits
 

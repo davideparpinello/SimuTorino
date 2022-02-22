@@ -1,8 +1,5 @@
 #!/bin/bash
 
-# COMMAND FOR GLX
-# defaults write org.xquartz.X11 enable_iglx -bool true 
-
 export DEBIAN_FRONTEND=noninteractive
 export LIBGL_ALWAYS_INDIRECT=1
 

@@ -8,7 +8,7 @@
   <p align="center">
     University of Trento - prof. Fabrizio Granelli
     <br />
-    <a href="https://github.com/davideparpinello/SimuTorino/blob/main/Presentation_SimuTorino.pdf"><strong>Download presentation »</strong></a>
+    <a href="https://github.com/davideparpinello/SimuTorino/blob/main/utils/Presentation_SimuTorino.pdf"><strong>Download presentation »</strong></a>
     <br />
     <br />
     <a href="https://github.com/Bralli99">Brando Chiminelli</a>

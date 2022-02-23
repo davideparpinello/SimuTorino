@@ -1,10 +1,10 @@
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 <br />
 <p align="center">
   <a href="https://github.com/davideparpinello/SimuTorino">
     <img src="https://cdn-icons-png.flaticon.com/512/4353/4353327.png" alt="Logo" width="210"> 
   </a>
   <h3 align="center">Simulating 5G-enabled vehicular networks in a Turin urban context</h3>
-  <p>[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)</p>
   <p align="center">
     University of Trento - prof. Fabrizio Granelli
     <br />

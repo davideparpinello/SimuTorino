@@ -93,7 +93,7 @@ In order to run the project you need to have installed:
    vagrant up
    ```
    This command creates and configures guest machines according to the Vagrantfile.
-   The first time you launch it, you have to wait for the project to build, it could take about one hour.
+   **The first time you launch it, you have to wait for the project to build, it could take about one hour.**
    
 
 ## Usage
